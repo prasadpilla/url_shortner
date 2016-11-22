@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hex_code: MyString
+  actual_url: MyString
+  redirect_count: 1
+  expiry: 2016-11-22 15:29:00
+
+two:
+  hex_code: MyString
+  actual_url: MyString
+  redirect_count: 1
+  expiry: 2016-11-22 15:29:00

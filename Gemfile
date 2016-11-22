@@ -10,6 +10,11 @@ gem 'spring', :group => :development
 
 gem 'sqlite3'
 
+group :development do
+  gem 'byebug'
+  gem 'pry'
+  gem 'irbtools-more', require: 'irbtools/binding'
+end
 
 
 # To use ActiveModel has_secure_password
