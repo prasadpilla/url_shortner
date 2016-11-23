@@ -10,6 +10,13 @@ gem 'spring', :group => :development
 
 gem 'sqlite3'
 
+group :test do
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.1'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'factory_girl_rails'
+  gem 'simplecov', :require => false #Code coverage analysis tool, integrates with rspec
+end
+
 group :development do
   gem 'byebug'
   gem 'pry'
