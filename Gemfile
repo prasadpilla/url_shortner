@@ -17,7 +17,7 @@ group :test do
   gem 'simplecov', :require => false #Code coverage analysis tool, integrates with rspec
 end
 
-group :development do
+group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'irbtools-more', require: 'irbtools/binding'
