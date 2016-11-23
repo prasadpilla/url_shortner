@@ -17,26 +17,26 @@ RSpec.describe ShortnerController, :type => :request do
 	 		it "shouldn't generate a shortned url" do
 	 			post "/generate", {:actual_url => "dhas"}
 	 			response_body = JSON.parse response.body
-	 			expect(response.status).to eq(200)
+	 			expect(response.status).to eq(400)
 	 			expect(response_body["error"]).to eq("Invalid url")
 	 		end
 	 	end
 
 	 end
 
-	 describe "should redirect to the actual url" do
+	 describe "process_and_redirect" do
 	 	let(:url_map) { FactoryGirl.create(:url_map)}
-	 	context "" do
-	 		it "" do
+	 	context "positive case" do
+	 		it "should redirect to the actual url" do
 	 			get "/#{url_map.hex_code}"
 	 			expect(response.status).to eq(302)
 	 		end
 	 	end
-	 	 context "" do
-	 		it "" do
+	 	 context "negitive" do
+	 		it "it should return no url found error" do
 	 		 get "/544994"
 	 		 response_body = JSON.parse response.body
-	 		 expect(response.status).to eq(200)
+	 		 expect(response.status).to eq(404)
 	 		 expect(response_body["error"]).to eq("No url found")
 	 	  end
 	 	 end
